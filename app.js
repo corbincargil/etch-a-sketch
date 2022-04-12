@@ -1,14 +1,36 @@
 //declaring some variables:
 mainContainer = document.getElementById('main-container');
-let cellNumber = 400; //Number of cells for the grid. In this case it is 16x16
 let cellNumberArray = []; //Initializes the array holding the number of grid cells
 let mouseIsDown = false;
+let cellNumber;
 
-//creates an array of consecutive numbers starting at 1, ending at cellNumber
-for (let i = 0; i < cellNumber; i++) {
-    cellNumberArray.push(i+1);
+
+//Prompting the user for desired grid size
+let numberOfRowsAndColumns = prompt('How many rows and columns would you like? (Input a number 1-100.)')
+
+//function that makes sure the # of rows/columns is between 1-50, updates the CSS to the right # of rows/columns, and outputs an array of the right size
+const setGridSize = function(gridSize) {
+    gridSize = numberOfRowsAndColumns;
+    if (gridSize > 0 && gridSize < 101) {
+        cellNumber = gridSize*gridSize; //Number of cells for the grid
+        let root = document.querySelector(':root');
+        root.style.setProperty('--number-of-rows-and-columns',gridSize);
+
+        //creates an array of consecutive numbers starting at 1, ending at cellNumber
+        for (let i = 0; i < cellNumber; i++) {
+            cellNumberArray.push(i+1);
+        }
+        return cellNumberArray;
+    } else {
+        alert('Please use a number between 0 and 100.');
+        return 0;
+    }
 }
-//Functiosn that change the value of mouseIsDown accordingly
+ 
+
+//~~~ DOM manipulation that changes classes of the divs and fills them accordingly ~~~
+
+//Functions that change the value of mouseIsDown accordingly
 mainContainer.addEventListener('mousedown', function() {mouseIsDown = true});
 mainContainer.addEventListener('mouseup', function() {mouseIsDown = false});
 
@@ -27,14 +49,14 @@ const divFilled = function(divMouseLeave) {
 }
 
 
+//~~~ Creating the grid ~~~
 
-//creates grid by making a div element for each array element and adding it to the mainContainer
-cellNumberArray.forEach( () => {
+//creates the grid by making a div element for each array element and adding it to the mainContainer
+myArray = setGridSize(numberOfRowsAndColumns);
+myArray.forEach( () => {
     cell = document.createElement('div');
     cell.addEventListener("mouseover", divFilling);
     cell.addEventListener("mouseleave", divFilled);
     cell.addEventListener("mouseup", divFilled);
     mainContainer.appendChild(cell);
-    });
-
-//document.addEventListener()
+});
