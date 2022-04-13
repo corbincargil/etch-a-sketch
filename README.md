@@ -20,10 +20,11 @@ Use this link to access a live preview of the sketching interface: https://corbi
 ## Lessons Learned:
 
 * Advanced DOM manipulation to make the webpage interactive
-  * Adding and removing nodes using JS
-  * Changing the attributes of nodes such as adding/removing classes and id's
   * Use of eventListeners for creating an interactive UI
-* The importanct of reviewing code I've written and cleaning/refactoring it to make it more readable 
+  * Combining eventListeners to create the click and drag effect
+  * Changing the attributes of nodes such as adding/removing classes and id's
+  * Adding and removing nodes using JS
+* The importanct of reviewing code I've written and cleaning/refactoring it to make it more readable and more efficient
 * Use of guard clauses in functions
 * CSS variables for changing the grid size and CSS styling for the user interface
 * Continued practice with Git & GitHub for version control 
