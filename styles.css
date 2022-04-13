@@ -32,6 +32,9 @@ body {
 #main-container .filling {
     background-color: rgb(40, 40, 40)
 }
+#main-container .black {
+    background-color: rgb(40, 40, 40)
+}
 #main-container .red {
     background-color: red;
 }
