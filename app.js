@@ -86,6 +86,11 @@ eraser.addEventListener('click',() =>{
     for (const gridDiv of gridDivs) {
         gridDiv.classList.toggle('eraser');
     }
+    if (eraser.classList.contains('eraser-on')) {
+        eraser.classList.remove('eraser-on');
+    } else {
+        eraser.classList.add('eraser-on');
+    }
 });
 
 //Reset button

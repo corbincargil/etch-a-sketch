@@ -3,7 +3,11 @@
 }
 
 #title {
+    font-size: 45px;
+    color: rgb(0, 117, 255);
     text-align: center;
+    word-spacing: 10px;
+    text-shadow: 2px 2px black;
     
 }
 
@@ -32,12 +36,12 @@ div.controls {
 }
 
 div.instructions {
-    padding-left: 60px;
     font-size: 16px;
-    grid-column-start: 1;
-    grid-column-end: span end;
-    justify-self: center;
-    width: 837px;
+    max-width: 200px;
+}
+
+.instructions ol {
+    
 }
 
 h2 {
@@ -46,14 +50,13 @@ h2 {
 }
 
 div.controls {
-    margin-top: 25px;
     display: flex;
     flex-direction: column;
     flex-shrink: 1;
     align-items: left;
     gap: 15px;
     height: 588px;
-    max-width: 250px;
+    max-width: 200px;
 }
 
 #grid-slider-container{
@@ -68,6 +71,11 @@ div.controls {
 
 #eraser-container{
     width: 56px;
+}
+
+.eraser-on {
+    color: white;
+    background-color: black;
 }
 
 #reset-button {
@@ -92,8 +100,7 @@ div.controls {
 /*Grid container (canvas) styles*/
 
 #main-grid-container {
-    margin: 25px;
-    margin-right: 0px;
+    margin: 0px 25px;
     padding: 5px;
     background-color: rgb(0, 0, 0);
     display: grid;
