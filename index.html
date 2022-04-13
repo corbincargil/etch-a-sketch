@@ -11,19 +11,58 @@
 <body>
     <h1 id="title">Pixel Art Sketching</h1>
     
+    <div class="instructions">
     <h2>Instructions:</h2>
-    <ul>
+    <ol>
         <li>Click and drag the mouse over the grid to paint.</li>
-        <li>When you are done painting, you can click the "Reset" button to clear the canvas and choose a new pixel size by choosing the number of rows and columns.</li>
-        <li><em>Tip:</em> to decrease the size of the pixels, use a higher number of rows/columns</li>
-        <li>Enjoy!</li>
+        <li>If you wish to restart and use a different number of rows and columns, use the controls below.</li>
+        <li>When you are done painting, you can click the "Clear" button to clear the canvas.</li>
+    </ol>
+    
+    <h3><em>Tips:</em></h3> 
+    <ul>
+        <li>To decrease the size of the pixels, use a higher number of rows/columns</li>
+        <li>If the canvas is not fitting inside your browser window, try changing the width of the browser window to adjust the size of the canvas</li>
     </ul>
+    <h3>Enjoy!</h3>
+    </div>
 
-    <button id="reset-button"><a href="./index.html"><strong>Reset</strong></a></button>
+    <div class="controls">
+        <h2>Controls:</h2>
+        
+        <div id="row-column-input" class="controls-component">
+            <p>
+                To change the number of rows & columns, input a number 1-100 and click the "Go" button: <input type="number" name="row-column-input"> <button id="row-column-go">Go</button> 
+            </p>
+            
+        </div>
+        <div class="controls body">
+            <div id="color-input" class="controls-component">
+                <p>Select one of the options below to change colors:</p> 
+                <form>
+                    <input type="radio" name="color-selector" id="black" value="black">
+                    <label for="black">Black</label><br>
+                    <input type="radio" name="color-selector" id="gray" value="gray">
+                    <label for="gray">Gray</label><br>
+                    <input type="radio" name="color-selector" id="red" value="red">
+                    <label for="red">Red</label><br>
+                    <input type="radio" name="color-selector" id="blue" value="blue">
+                    <label for="blue">Blue</label><br>
+                    <input type="radio" name="color-selector" id="yellow" value="yellow">
+                    <label for="yellow">Yellow</label><br>
+                </form>
+            </div>
+            <div id="reset-button-box" class="controls-component">
+                <button id="reset-button"><strong>Clear</strong></button>
+                <p><em>Warning:</em> Pressing this button will erase all your work!</p>
+            </div>
+        </div>
+    </div>
+
 
     <div id="main-container">
         
-
     </div>
+
 </body>
 </html>

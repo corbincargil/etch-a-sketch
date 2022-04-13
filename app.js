@@ -1,34 +1,7 @@
 //declaring some variables:
-mainContainer = document.getElementById('main-container');
-let cellNumberArray = []; //Initializes the array holding the number of grid cells
+let mainContainer = document.getElementById('main-container');
 let mouseIsDown = false;
-let cellNumber;
-
-
-//Prompting the user for desired grid size
-let numberOfRowsAndColumns = prompt('How many rows and columns would you like? (Input a number 1-100.)')
-
-//function that makes sure the # of rows/columns is between 1-50, updates the CSS to the right # of rows/columns, and outputs an array of the right size
-const setGridSize = function(gridSize) {
-    gridSize = numberOfRowsAndColumns;
-    if (gridSize > 0 && gridSize < 101) {
-        cellNumber = gridSize*gridSize; //Number of cells for the grid
-        let root = document.querySelector(':root');
-        root.style.setProperty('--number-of-rows-and-columns',gridSize);
-
-        //creates an array of consecutive numbers starting at 1, ending at cellNumber
-        for (let i = 0; i < cellNumber; i++) {
-            cellNumberArray.push(i+1);
-        }
-        return cellNumberArray;
-    } else {
-        alert('Please use a number between 0 and 100.');
-        return 0;
-    }
-}
- 
-
-//~~~ DOM manipulation that changes classes of the divs and fills them accordingly ~~~
+let numberOfRowsAndColumns = 20;
 
 //Functions that change the value of mouseIsDown accordingly
 mainContainer.addEventListener('mousedown', function() {mouseIsDown = true});
@@ -41,22 +14,72 @@ const divFilling = function(divMouseOver) {
     }
 }
 
-//Function that adds a class name to a div. Called when the mouse leaves the div. 
+//Function that adds a class name to a div. Called when the mouse leaves the div.
+const colorRadioButtons = document.querySelectorAll('input[name="color-selector');
+
 const divFilled = function(divMouseLeave) {
     if (mouseIsDown) {
-        divMouseLeave.target.setAttribute('class','filled');
+        for (const radioButton of colorRadioButtons) {
+           if (radioButton.checked) {
+            colorClass = radioButton.value;
+            divMouseLeave.target.setAttribute('class', colorClass);
+            } 
+        } 
+        
+        
     }
 }
 
+//function that creates the grid
+const createGrid = function(gridSize) {
+    gridSize = numberOfRowsAndColumns;
 
-//~~~ Creating the grid ~~~
+    //guard clause checking that gridSize is a number 1-100
+    if (gridSize > 0 && gridSize < 101) { 
 
-//creates the grid by making a div element for each array element and adding it to the mainContainer
-myArray = setGridSize(numberOfRowsAndColumns);
-myArray.forEach( () => {
-    cell = document.createElement('div');
-    cell.addEventListener("mouseover", divFilling);
-    cell.addEventListener("mouseleave", divFilled);
-    cell.addEventListener("mouseup", divFilled);
-    mainContainer.appendChild(cell);
+    } else {
+        alert('Please use a number between 1 and 100.');
+        return 0;
+    }
+
+    //Creates CSS grid with desired number of rows/columns
+    let root = document.querySelector(':root');
+    root.style.setProperty('--number-of-rows-and-columns',gridSize);
+
+    //Adds a div  to each grid item with the following eventListeners
+    let cellNumber = gridSize*gridSize;
+    for (let i = 0; i < cellNumber; i++) {
+        cell = document.createElement('div');
+        cell.addEventListener("mouseover", divFilling);
+        cell.addEventListener("mouseleave", divFilled);
+        cell.addEventListener("mouseup", divFilled);
+        mainContainer.appendChild(cell);
+    }
+}
+
+//Function to remove existing grid
+const removeGrid = function () {
+    while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+    }
+}
+
+createGrid(numberOfRowsAndColumns);
+
+//Getting # of rows and columns from "Go" button
+const goButton = document.getElementById('row-column-go');
+const rowColumnInput = document.querySelector('input[name="row-column-input"]');
+
+//"Go" button to changge the number of rows/columns
+goButton.addEventListener("click", () => {
+    removeGrid()
+    numberOfRowsAndColumns = rowColumnInput.value;
+    createGrid(numberOfRowsAndColumns);
+});    
+
+//Reset button
+const resetButton = document.getElementById('reset-button');
+resetButton.addEventListener("click", () => {
+    removeGrid() 
+    createGrid(numberOfRowsAndColumns)
 });
