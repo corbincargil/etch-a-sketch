@@ -56,6 +56,20 @@ const createGrid = function(gridSize) {
         cell.addEventListener("mouseup", divFilled);
         mainGridContainer.appendChild(cell);
     }
+
+    let eraser = document.getElementById('eraser-button');
+    let gridDivs = document.querySelectorAll('.grid-cell');
+    eraser.addEventListener('click',() =>{
+        for (const gridDiv of gridDivs) {
+            gridDiv.classList.toggle('eraser');
+        }
+        if (eraser.classList.contains('eraser-on')) {
+            eraser.classList.remove('eraser-on');
+        } else {
+            eraser.classList.add('eraser-on');
+        }
+    });
+
 }
 
 //Function to remove existing grid
@@ -79,19 +93,8 @@ slider.addEventListener('change', () => {
     }
 });
 
-//Toggle eraser
-const eraser = document.getElementById('eraser-button');
-let gridDivs = document.querySelectorAll('.grid-cell');
-eraser.addEventListener('click',() =>{
-    for (const gridDiv of gridDivs) {
-        gridDiv.classList.toggle('eraser');
-    }
-    if (eraser.classList.contains('eraser-on')) {
-        eraser.classList.remove('eraser-on');
-    } else {
-        eraser.classList.add('eraser-on');
-    }
-});
+
+
 
 //Reset button
 const resetButton = document.getElementById('reset-button');
