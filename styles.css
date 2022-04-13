@@ -4,77 +4,59 @@
 
 #title {
     text-align: center;
+    text-decoration: underline;
 }
 
 body {
     font-family: Helvetica, sans-serif;
     background-color: rgb(222, 193, 250);
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#main-container {
-    margin: 20px;
-    padding: 12px;
-    background-color: rgb(0, 0, 0);
-    display: grid;
-    grid-template-columns: repeat(var(--number-of-rows-and-columns), minmax(0,1fr));
-    grid-template-rows: repeat(var(--number-of-rows-and-columns), minmax(0,1fr));
+#main-body-container{
+    display: flex;
 }
 
-#main-container div {
-    aspect-ratio: 1; /* Makes each div within the grid square*/
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgba(0, 0, 0, 0.194);
-}
-
-
-/*Styles for the grid items that allow the user to sketch*/
-#main-container .filling {
-    background-color: rgb(40, 40, 40)
-}
-#main-container .black {
-    background-color: rgb(40, 40, 40)
-}
-#main-container .red {
-    background-color: red;
-}
-#main-container .blue {
-    background-color: blue;
-}
-#main-container .yellow {
-    background-color: yellow;
-}
-#main-container .gray {
-    background-color: rgb(96, 96, 96);
-}
-
-/*styles for the instrucitons*/
+/*styles for the instrucitons and controls boxes*/
 div.instructions,
 div.controls {
     padding: 10px;
-    background-color: azure;
+    background-color: rgba(240, 255, 255, 0.6);
     border: 2px solid black;
     border-radius: 10px;
 }
+
+div.instructions {
+    font-size: 16px;
+    margin-right: 25px;
+    grid-column-start: 1;
+    grid-column-end: span end;
+    justify-self: center;
+    max-width: 900px;
+    
+}
+
 h2 {
     text-decoration: underline;
     border: none;
 }
 
 div.controls {
-    margin-top: 30px;
-}
-.controls.body {
+    margin-top: 25px;
     display: flex;
-    justify-content: space-around;
-    align-items:flex-end;
-    border: none;
+    flex-direction: column;
+    gap: 15px;
+    height: 600px;
+    max-width: 250px;
 }
 
-.controls-component {
-    padding: 10px;
-    border: 3px solid rgba(184, 195, 195, 0.639);
-    border-radius: 10px;
+#grid-slider-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #reset-button {
@@ -85,4 +67,54 @@ div.controls {
 #reset-button-box {
     border: none;
     text-align: center;
+}
+
+.controls-component {
+    padding: 10px;
+    border: 3px solid rgba(184, 195, 195, 0.639);
+    border-radius: 10px;
+}
+
+
+
+
+/*Grid container (canvas) styles*/
+
+#main-grid-container {
+    margin: 25px;
+    padding: 12px;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: repeat(var(--number-of-rows-and-columns), minmax(0,1fr));
+    grid-template-rows: repeat(var(--number-of-rows-and-columns), minmax(0,1fr));
+    flex: none;
+    width: 600px;
+    height: 600px;
+}
+
+#main-grid-container div {
+    aspect-ratio: 1; /* Makes each div within the grid square*/
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.194);
+}
+
+
+/*Styles for the grid items that allow the user to sketch*/
+#main-grid-container .filling {
+    background-color: rgb(40, 40, 40)
+}
+#main-grid-container .black {
+    background-color: rgb(40, 40, 40)
+}
+#main-grid-container .red {
+    background-color: red;
+}
+#main-grid-container .blue {
+    background-color: blue;
+}
+#main-grid-container .yellow {
+    background-color: yellow;
+}
+#main-grid-container .gray {
+    background-color: rgb(96, 96, 96);
 }

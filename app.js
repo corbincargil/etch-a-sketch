@@ -1,11 +1,11 @@
 //declaring some variables:
-let mainContainer = document.getElementById('main-container');
+let mainGridContainer = document.getElementById('main-grid-container');
 let mouseIsDown = false;
-let numberOfRowsAndColumns = 20;
+let numberOfRowsAndColumns = 30;
 
 //Functions that change the value of mouseIsDown accordingly
-mainContainer.addEventListener('mousedown', function() {mouseIsDown = true});
-mainContainer.addEventListener('mouseup', function() {mouseIsDown = false});
+mainGridContainer.addEventListener('mousedown', function() {mouseIsDown = true});
+mainGridContainer.addEventListener('mouseup', function() {mouseIsDown = false});
 
 //Function that adds a class name to a div. Called when the div is hovered over
 const divFilling = function(divMouseOver) {
@@ -25,8 +25,6 @@ const divFilled = function(divMouseLeave) {
             divMouseLeave.target.setAttribute('class', colorClass);
             } 
         } 
-        
-        
     }
 }
 
@@ -35,10 +33,10 @@ const createGrid = function(gridSize) {
     gridSize = numberOfRowsAndColumns;
 
     //guard clause checking that gridSize is a number 1-100
-    if (gridSize > 0 && gridSize < 101) { 
+    if (gridSize > 1 && gridSize < 81) { 
 
     } else {
-        alert('Please use a number between 1 and 100.');
+        alert('Please use a number between 2 and 80.');
         return 0;
     }
 
@@ -53,33 +51,34 @@ const createGrid = function(gridSize) {
         cell.addEventListener("mouseover", divFilling);
         cell.addEventListener("mouseleave", divFilled);
         cell.addEventListener("mouseup", divFilled);
-        mainContainer.appendChild(cell);
+        mainGridContainer.appendChild(cell);
     }
 }
 
 //Function to remove existing grid
 const removeGrid = function () {
-    while (mainContainer.firstChild) {
-        mainContainer.removeChild(mainContainer.firstChild);
+    while (mainGridContainer.firstChild) {
+        mainGridContainer.removeChild(mainGridContainer.firstChild);
     }
 }
 
 createGrid(numberOfRowsAndColumns);
 
-//Getting # of rows and columns from "Go" button
-const goButton = document.getElementById('row-column-go');
-const rowColumnInput = document.querySelector('input[name="row-column-input"]');
-
-//"Go" button to changge the number of rows/columns
-goButton.addEventListener("click", () => {
-    removeGrid()
-    numberOfRowsAndColumns = rowColumnInput.value;
-    createGrid(numberOfRowsAndColumns);
-});    
+//Grid size slider
+const slider = document.getElementById("grid-slider");
+slider.addEventListener('change', () => {
+    const confirmation = confirm("Are you sure you want to change the grid size? This will erase all your curent work.");
+    if (confirmation) {
+        numberOfRowsAndColumns = slider.value;
+        removeGrid();
+        createGrid(numberOfRowsAndColumns);
+        console.log(numberOfRowsAndColumns);
+    }
+});
 
 //Reset button
 const resetButton = document.getElementById('reset-button');
 resetButton.addEventListener("click", () => {
-    removeGrid() 
-    createGrid(numberOfRowsAndColumns)
+    removeGrid();
+    createGrid(numberOfRowsAndColumns);
 });

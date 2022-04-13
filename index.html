@@ -10,33 +10,15 @@
 </head>
 <body>
     <h1 id="title">Pixel Art Sketching</h1>
-    
-    <div class="instructions">
-    <h2>Instructions:</h2>
-    <ol>
-        <li>Click and drag the mouse over the grid to paint.</li>
-        <li>If you wish to restart and use a different number of rows and columns, use the controls below.</li>
-        <li>When you are done painting, you can click the "Clear" button to clear the canvas.</li>
-    </ol>
-    
-    <h3><em>Tips:</em></h3> 
-    <ul>
-        <li>To decrease the size of the pixels, use a higher number of rows/columns</li>
-        <li>If the canvas is not fitting inside your browser window, try changing the width of the browser window to adjust the size of the canvas</li>
-    </ul>
-    <h3>Enjoy!</h3>
-    </div>
-
-    <div class="controls">
-        <h2>Controls:</h2>
-        
-        <div id="row-column-input" class="controls-component">
-            <p>
-                To change the number of rows & columns, input a number 1-100 and click the "Go" button: <input type="number" name="row-column-input"> <button id="row-column-go">Go</button> 
-            </p>
+    <div id="main-body-container">
+        <div class="controls">
+            <h2>Controls:</h2>
             
-        </div>
-        <div class="controls body">
+            <div id="grid-slider-container" class="controls-component">
+                <p>Grid Size:</p>
+                <input type="range" min="2" max="80" class="slider" id="grid-slider" value="30">
+            </div>
+
             <div id="color-input" class="controls-component">
                 <p>Select one of the options below to change colors:</p> 
                 <form>
@@ -59,12 +41,28 @@
                 <p><em>Warning:</em> Pressing this button will erase all your work!</p>
             </div>
         </div>
+
+
+        <div id="main-grid-container">
+            
+        </div>
     </div>
 
-
-    <div id="main-container">
+    <div class="instructions">
+        <h2>Instructions:</h2>
+        <ol>
+            <li>Click and drag the mouse over the grid to paint.</li>
+            <li>If you wish to restart and use a different number of rows and columns, use the controls below.</li>
+            <li>When you are done painting, you can click the "Clear" button to clear the canvas.</li>
+        </ol>
         
-    </div>
+        <h3><em>Tips:</em></h3> 
+        <ul>
+            <li>To decrease the size of the pixels, use a higher number of rows/columns</li>
+            <li>If the canvas is not fitting inside your browser window, try changing the width of the browser window to adjust the size of the canvas</li>
+        </ul>
+        <h3>Enjoy!</h3>
+        </div>
 
 </body>
 </html>
