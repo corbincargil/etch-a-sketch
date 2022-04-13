@@ -8,7 +8,7 @@ This project was a part of The Odin Project curriculum.
 
 ## Live Preview: 
 
-Use this link to access a live preview of the sketching interface: https://corbincargil.github.io/etch-a-sketch/
+Use this link to access a live demo of the sketching interface: https://corbincargil.github.io/etch-a-sketch/
 
 ## Features: 
 
@@ -16,6 +16,9 @@ Use this link to access a live preview of the sketching interface: https://corbi
 * Change the size of the grid from 2x2 all the way up to 100x100
 * Eraser for those pesky mistakes
 * Reset button that clears the slate entirely
+
+![image](https://user-images.githubusercontent.com/100732012/163267896-4c2f242c-330e-4b88-8a4e-bb6e3b22a2ab.png)
+
 
 ## Lessons Learned:
 
