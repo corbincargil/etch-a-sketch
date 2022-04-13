@@ -4,16 +4,16 @@
 
 #title {
     text-align: center;
-    text-decoration: underline;
+    
 }
 
 body {
     font-family: Helvetica, sans-serif;
-    background-color: rgb(222, 193, 250);
-    padding: 10px;
+    background-color: rgb(233, 233, 233);
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 }
 
 #main-body-container{
@@ -23,20 +23,21 @@ body {
 /*styles for the instrucitons and controls boxes*/
 div.instructions,
 div.controls {
+    margin: 0px;
     padding: 10px;
-    background-color: rgba(240, 255, 255, 0.6);
-    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid black;
     border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 div.instructions {
+    padding-left: 60px;
     font-size: 16px;
-    margin-right: 25px;
     grid-column-start: 1;
     grid-column-end: span end;
     justify-self: center;
-    max-width: 900px;
-    
+    width: 837px;
 }
 
 h2 {
@@ -48,8 +49,10 @@ div.controls {
     margin-top: 25px;
     display: flex;
     flex-direction: column;
+    flex-shrink: 1;
+    align-items: left;
     gap: 15px;
-    height: 600px;
+    height: 588px;
     max-width: 250px;
 }
 
@@ -57,6 +60,14 @@ div.controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#color-picker{
+    border-radius: 8px;
+}
+
+#eraser-container{
+    width: 56px;
 }
 
 #reset-button {
@@ -71,7 +82,7 @@ div.controls {
 
 .controls-component {
     padding: 10px;
-    border: 3px solid rgba(184, 195, 195, 0.639);
+    border: 2px solid rgb(63, 63, 63);
     border-radius: 10px;
 }
 
@@ -82,7 +93,8 @@ div.controls {
 
 #main-grid-container {
     margin: 25px;
-    padding: 12px;
+    margin-right: 0px;
+    padding: 5px;
     background-color: rgb(0, 0, 0);
     display: grid;
     grid-template-columns: repeat(var(--number-of-rows-and-columns), minmax(0,1fr));
@@ -90,6 +102,7 @@ div.controls {
     flex: none;
     width: 600px;
     height: 600px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 8px, rgba(0, 0, 0, 0.3) 0px 10px 16px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 #main-grid-container div {
@@ -106,4 +119,39 @@ div.controls {
 }
 #main-grid-container .grid-off {
      border: none;
+}
+
+.footer{
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 60%;
+    font-size: 12px;
+}
+.footer img  {
+    aspect-ratio: 1;
+    width: 18px;
+    height: 18px;
+    flex-shrink: none;
+}
+.footer div{
+    display: flex;
+    gap: 6px;    
+    align-items: center;
+}
+
+.footer a:hover {
+    transform: scale(1.05);
+    transition: .2s;
+}
+.footer a:hover img {
+    transform: rotate(1turn);
+    transition: 1s;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
 }
