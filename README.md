@@ -10,16 +10,23 @@ This project was a part of The Odin Project curriculum.
 
 Use this link to access a live preview of the sketching interface: https://corbincargil.github.io/etch-a-sketch/
 
-## Approach: 
+## Features: 
 
-The first step of this project was to create a 20x20 grid of 'divs' using JavaScript and CSS (instead of just hard-coding them into the HTML file). Next, DOM manipulation was used to change the background color of the any individual grid cells that the mouse hovered over. In an attempt to give the user more artistic freedom, another eventListener was used to determine if the mouse button is being pushed down, and only execute the background color change when the mouse was being clicked. This made it to where the user must click and drag the mouse instead of just hovering the mouse over the grid. Finally, some additional features were added such as changing the paint color, adding a reset button, and allowing the user to choose the "pixel" size by adjusting the number of rows and columns on the grid. 
+* Draw in differenct colors
+* Change the size of the grid from 2x2 all the way up to 100x100
+* Eraser for those pesky mistakes
+* Reset button that clears the slate entirely
 
-## Skills/Methods Used:
+## Lessons Learned:
 
 * Advanced DOM manipulation to make the webpage interactive
-* Use of JavaScript functions, conditional statements, and loops as well as other JS fundamentals
+  * Adding and removing nodes using JS
+  * Changing the attributes of nodes such as adding/removing classes and id's
+  * Use of eventListeners for creating an interactive UI
+* The importanct of reviewing code I've written and cleaning/refactoring it to make it more readable 
+* Use of guard clauses in functions
 * CSS variables for changing the grid size and CSS styling for the user interface
-* Git & GitHub for version control 
+* Continued practice with Git & GitHub for version control 
 
 ## Technologies Used:
 
@@ -28,3 +35,4 @@ The first step of this project was to create a 20x20 grid of 'divs' using JavaSc
 * Chrome dev. tools
 * MacOS Terminal
 * VS Code
+* Lots of Googling
