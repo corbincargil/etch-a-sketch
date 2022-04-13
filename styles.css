@@ -101,20 +101,8 @@ div.controls {
 
 /*Styles for the grid items that allow the user to sketch*/
 #main-grid-container .filling {
-    background-color: rgb(40, 40, 40)
+    background-color: rgb(40, 40, 40);
 }
-#main-grid-container .black {
-    background-color: rgb(40, 40, 40)
-}
-#main-grid-container .red {
-    background-color: red;
-}
-#main-grid-container .blue {
-    background-color: blue;
-}
-#main-grid-container .yellow {
-    background-color: yellow;
-}
-#main-grid-container .gray {
-    background-color: rgb(96, 96, 96);
+#main-grid-container .grid-off {
+     border: none;
 }

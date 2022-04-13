@@ -19,23 +19,15 @@
                 <input type="range" min="2" max="80" class="slider" id="grid-slider" value="30">
             </div>
 
-            <div id="color-input" class="controls-component">
-                <p>Select one of the options below to change colors:</p> 
-                <form>
-                    <input type="radio" name="color-selector" id="eraser" value="eraser">
-                    <label for="eraser">Eraser</label><br>
-                    <input type="radio" name="color-selector" id="black" value="black">
-                    <label for="black">Black</label><br>
-                    <input type="radio" name="color-selector" id="gray" value="gray">
-                    <label for="gray">Gray</label><br>
-                    <input type="radio" name="color-selector" id="red" value="red">
-                    <label for="red">Red</label><br>
-                    <input type="radio" name="color-selector" id="blue" value="blue">
-                    <label for="blue">Blue</label><br>
-                    <input type="radio" name="color-selector" id="yellow" value="yellow">
-                    <label for="yellow">Yellow</label><br>
-                </form>
+            <div id="color-picker-container" class="controls-component">
+                <label for="color-picker">Color Picker:</label>
+                <input type="color" name="color-picker" value="#dec2fb">
             </div>
+
+            <div id="eraser-container" class="controls-component">
+                <button id="eraser-button">Eraser</button>
+            </div>
+
             <div id="reset-button-box" class="controls-component">
                 <button id="reset-button"><strong>Clear</strong></button>
                 <p><em>Warning:</em> Pressing this button will erase all your work!</p>

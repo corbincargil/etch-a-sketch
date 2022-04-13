@@ -10,23 +10,25 @@ mainGridContainer.addEventListener('mouseup', function() {mouseIsDown = false});
 //Function that adds a class name to a div. Called when the div is hovered over
 const divFilling = function(divMouseOver) {
     if (mouseIsDown) {
-        divMouseOver.target.setAttribute('class', 'filling');
+        divMouseOver.target.classList.add('filling');
     }
 }
 
-//Function that adds a class name to a div. Called when the mouse leaves the div.
-const colorRadioButtons = document.querySelectorAll('input[name="color-selector');
-
+//Select the colorpicker, update the background color according to the color picker
+let colorPicker = document.querySelector('input[name="color-picker');
 const divFilled = function(divMouseLeave) {
     if (mouseIsDown) {
-        for (const radioButton of colorRadioButtons) {
-           if (radioButton.checked) {
-            colorClass = radioButton.value;
-            divMouseLeave.target.setAttribute('class', colorClass);
-            } 
-        } 
+        let backgroundColor;
+        if (divMouseLeave.target.classList.contains('eraser')) {
+            backgroundColor = '#ffffff'
+            divMouseLeave.target.style.backgroundColor = backgroundColor;
+        } else {
+            backgroundColor = colorPicker.value;
+            divMouseLeave.target.style.backgroundColor = backgroundColor;
+        }
     }
 }
+
 
 //function that creates the grid
 const createGrid = function(gridSize) {
@@ -48,6 +50,7 @@ const createGrid = function(gridSize) {
     let cellNumber = gridSize*gridSize;
     for (let i = 0; i < cellNumber; i++) {
         cell = document.createElement('div');
+        cell.classList.add('grid-cell');
         cell.addEventListener("mouseover", divFilling);
         cell.addEventListener("mouseleave", divFilled);
         cell.addEventListener("mouseup", divFilled);
@@ -73,6 +76,15 @@ slider.addEventListener('change', () => {
         removeGrid();
         createGrid(numberOfRowsAndColumns);
         console.log(numberOfRowsAndColumns);
+    }
+});
+
+//Toggle eraser
+const eraser = document.getElementById('eraser-button');
+let gridDivs = document.querySelectorAll('.grid-cell');
+eraser.addEventListener('click',() =>{
+    for (const gridDiv of gridDivs) {
+        gridDiv.classList.toggle('eraser');
     }
 });
 
