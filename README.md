@@ -2,7 +2,7 @@
 
 ## Description:
 
-This etch-sketch project is a simple sketching interface that will allows the user to make pixel art by clicking and dragging their mouse through the grid. The grid can be reset and the number of rows & columns on the grid adjusted as well. The goal of this project was to primarily practice using advanced DOM manipulation using JavaScript as well as CSS to make an interactive web page.
+This etch-sketch project is a simple sketching interface that allows the user to make pixel art by clicking and dragging their mouse through the grid. The grid can be reset and the number of rows & columns on the grid adjusted as well. The primary goal of this project was to practice using advanced DOM manipulation to make an interactive web page.
 
 This project was a part of The Odin Project curriculum. 
 
