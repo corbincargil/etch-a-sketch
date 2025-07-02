@@ -1,0 +1,26 @@
+{
+  "name": "@corbincargil/etch-a-sketch",
+  "version": "1.0.0",
+  "description": "A simple etch a sketch implementation",
+  "keywords": [
+    "web-component",
+    "etch-a-sketch",
+    "drawing",
+    "pixel-art"
+  ],
+  "homepage": "https://github.com/corbincargil/etch-a-sketch#readme",
+  "bugs": {
+    "url": "https://github.com/corbincargil/etch-a-sketch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corbincargil/etch-a-sketch.git"
+  },
+  "license": "ISC",
+  "author": "Corbin Cargil",
+  "type": "commonjs",
+  "main": "etch-a-sketch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
