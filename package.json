@@ -1,6 +1,6 @@
 {
   "name": "@corbincargil/etch-a-sketch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple etch a sketch implementation",
   "keywords": [
     "web-component",
