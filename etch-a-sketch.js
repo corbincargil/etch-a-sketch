@@ -38,27 +38,54 @@ class EtchASketch extends HTMLElement {
                 }
 
                 #main-body-container{
+                    flex: 1;
+                    width: 100%;
                     display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
                 }
 
                 div.instructions,
                 div.controls {
                     margin: 0px;
-                    padding: 10px;
+                    padding: 8px;
                     background-color: rgba(255, 255, 255, 0.6);
                     border: 1px solid black;
-                    border-radius: 10px;
-                    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                    border-radius: 8px;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 16px -5px, rgba(0, 0, 0, 0.3) 0px 4px 8px -8px;
                 }
 
                 div.instructions {
-                    font-size: 16px;
-                    max-width: 200px;
+                    font-size: 14px;
+                    max-width: 180px;
+                    line-height: 1.3;
+                }
+
+                div.instructions ol {
+                    margin: 0;
+                    padding-left: 20px;
+                }
+
+                div.instructions ul {
+                    margin: 0;
+                    padding-left: 20px;
+                }
+
+                div.instructions li {
+                    margin-bottom: 4px;
+                    line-height: 1.2;
+                }
+
+                div.instructions h3 {
+                    margin: 8px 0 4px 0;
+                    font-size: 13px;
                 }
 
                 h2 {
                     text-decoration: underline;
                     border: none;
+                    font-size: 16px;
+                    margin: 0 0 8px 0;
                 }
 
                 div.controls {
@@ -66,23 +93,50 @@ class EtchASketch extends HTMLElement {
                     flex-direction: column;
                     flex-shrink: 1;
                     align-items: left;
-                    gap: 15px;
-                    height: 588px;
-                    max-width: 200px;
+                    gap: 10px;
+                    height: auto;
+                    max-width: 160px;
+                    min-height: 400px;
                 }
 
                 #grid-slider-container{
                     display: flex;
-                    justify-content: space-between;
-                    align-items: center;
+                    flex-direction: column;
+                    gap: 6px;
+                }
+
+                #grid-slider-container p {
+                    margin: 0;
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+
+                #color-picker-container{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+                }
+
+                #color-picker-container label {
+                    margin: 0;
+                    font-size: 12px;
+                    font-weight: bold;
                 }
 
                 #color-picker{
-                    border-radius: 8px;
+                    border-radius: 4px;
+                    width: 100%;
+                    height: 30px;
                 }
 
                 #eraser-container{
-                    width: 56px;
+                    width: 90%;
+                }
+
+                #eraser-container button {
+                    width: 100%;
+                    padding: 4px 8px;
+                    font-size: 12px;
                 }
 
                 .eraser-on {
@@ -91,8 +145,10 @@ class EtchASketch extends HTMLElement {
                 }
 
                 #reset-button {
-                     width: 80px;
+                    width: 100%;
                     height: auto;
+                    padding: 4px 8px;
+                    font-size: 12px;
                 }
 
                 #reset-button-box {
@@ -100,10 +156,17 @@ class EtchASketch extends HTMLElement {
                     text-align: center;
                 }
 
+                #reset-button-box p {
+                    margin: 4px 0 0 0;
+                    font-size: 10px;
+                    line-height: 1.2;
+                }
+
                 .controls-component {
-                    padding: 10px;
-                    border: 2px solid rgb(63, 63, 63);
-                    border-radius: 10px;
+                    padding: 6px 8px;
+                    border: 1px solid rgb(63, 63, 63);
+                    border-radius: 6px;
+                    margin-bottom: 2px;
                 }
 
                 #main-grid-container {
@@ -113,9 +176,11 @@ class EtchASketch extends HTMLElement {
                     display: grid;
                     grid-template-columns: repeat(var(--number-of-rows-and-columns), minmax(0,1fr));
                     grid-template-rows: repeat(var(--number-of-rows-and-columns), minmax(0,1fr));
-                    flex: none;
-                    width: 600px;
-                    height: 600px;
+                    flex: 1;
+                    min-width: 400px;
+                    max-width: 600px;
+                    width: 100%;
+                    aspect-ratio: 1;
                     box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 8px, rgba(0, 0, 0, 0.3) 0px 10px 16px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
                 }
 
